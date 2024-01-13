@@ -23,6 +23,9 @@ stages:
   - job: Build
     displayName: Build
     pool:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
       name: dockertest
       demands:
        - agent.name -equals dockertest
